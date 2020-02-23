@@ -11,9 +11,11 @@ import '@/styles/index.scss' // global css
 import App from './App'
 import store from './store'
 import router from './router'
-
-import '@/icons' // icon
-import '@/permission' // permission control
+import CKEditor from '@ckeditor/ckeditor5-vue';
+ 
+Vue.use( CKEditor );
+// import '@/icons' // icon
+// import '@/permission' // permission control
 
 /**
  * If you don't want to use mock-server
