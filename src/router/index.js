@@ -19,6 +19,23 @@ export const constantRoutes = [
     name: 'Menu1-2-1',
     meta: { title: 'Menu1-2-1' }
   },
+  {
+    path: '/codemirror',
+    component: () => import('@/views/codemirror.vue'),
+    name: 'Menu1-2-1',
+    meta: { title: 'Menu1-2-1' }
+  },
+  {
+    path: '/highlight',
+    component: () => import('@/views/highlight.vue'),
+    name: 'Menu1-2-1',
+    meta: { title: 'Menu1-2-1' }
+  }, {
+    path: '/ajaxfileupload',
+    component: () => import('@/views/ajaxfileupload.vue'),
+    name: 'Menu1-2-1',
+    meta: { title: 'Menu1-2-1' }
+  },
 ]
 
 const createRouter = () => new Router({
