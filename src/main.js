@@ -12,9 +12,10 @@ import App from './App'
 import store from './store'
 import router from './router'
 import CKEditor from '@ckeditor/ckeditor5-vue';
- 
+import uploader from './components/vue-uploader/index'
 import axios  from 'axios'
 
+Vue.use(uploader);
 
 Vue.use( CKEditor );
 // import '@/icons' // icon

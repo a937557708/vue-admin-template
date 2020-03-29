@@ -35,6 +35,11 @@ export const constantRoutes = [
     component: () => import('@/views/ajaxfileupload.vue'),
     name: 'Menu1-2-1',
     meta: { title: 'Menu1-2-1' }
+  },{
+    path: '/uploader',
+    component: () => import('@/views/uploader.vue'),
+    name: 'Menu1-2-1',
+    meta: { title: 'Menu1-2-1' }
   },
 ]
 
