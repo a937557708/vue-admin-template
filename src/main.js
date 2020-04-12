@@ -14,7 +14,7 @@ import router from './router'
 import CKEditor from '@ckeditor/ckeditor5-vue';
 import uploader from './components/vue-uploader/index'
 import axios  from 'axios'
-
+import './components/index'
 Vue.use(uploader);
 
 Vue.use( CKEditor );

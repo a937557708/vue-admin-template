@@ -1,112 +1,45 @@
 <template>
-  <div class="hello">
-    <div class="goods-editor">
-      <!-- 工具栏容器 -->
-      <div :id="'toolbar-container'+id"></div>
-
-      <!-- 编辑器容器 -->
-      <div :id="'editor'+id" class="editorClass" :style="styleObj">
-        <!-- <p>This is the initial editor content.</p> -->
-      </div>
-    </div>
-  </div>
+ <el-row>
+     <el-col :span="24"> 
+        <ckeditorTest5 id="asdsa" v-model="strHtml"></ckeditorTest5>
+     </el-col>
+      <el-col :span="24"> 
+        <ckeditorTest5 id="asdsa11" v-model="strHtml1"></ckeditorTest5>
+     </el-col>
+      <el-col :span="24"> 
+        <ckeditorTest5 id="asdsawqeq" v-model="strHtml2"></ckeditorTest5>
+     </el-col>
+</el-row>
 </template>
 
 <script>
-// npm install --save @ckeditor/ckeditor5-build-classic
-import CKEditor from "@ckeditor/ckeditor5-build-decoupled-document";
-import "@ckeditor/ckeditor5-build-decoupled-document/build/translations/zh-cn"; //中文包
+// doc: https://panjiachen.github.io/vue-element-admin-site/feature/component/svg-icon.html#usage
+import { isExternal } from '@/utils/validate'
 
 export default {
+  name: 'SvgIcon',
   data() {
-    return {
-      editor: null, // 编辑器实例
-      styleObj: {
-          height:400+'px'
+      return {
+        strHtml: "das2131",
+        strHtml1:'sad',
+        strHtml2:"撒旦撒"
       }
-    };
-  },
-  props: {
-    height: {
-      type: [String, Number],
-      default: 400
     },
-    id:{
-      type: [String, Number],
-      default:new Date().getTime()
-    }
-
+  props: {
+  
   },
-  created() {
-    
-  },
-  mounted() {
-    this.initCKEditor();
-    if (this.height instanceof Number) {
-      this.styleObj.height = this.height + "px";
-    } else {
-      this.styleObj.height = this.height;
-    }
-  },
-  methods: {
-    initCKEditor() {
-      let that = this;
-      class UploadAdapter {
-        constructor(loader) {
-          this.loader = loader;
-        }
-        upload() {
-          //重置上传路径
-          return new Promise((resolve, reject) => {
-            that.editor;
-            let data = this.loader.data;
-            resolve({
-              default: data
-            });
-          });
-        }
-        abort() {}
-      }
-      //初始化编辑器
-      CKEditor.create(document.querySelector("#editor"+that.id), {
-        removePlugins: ["MediaEmbed"], //除去视频按钮
-        language: "zh-cn", // 中文
-        ckfinder: {
-          uploaded: 1,
-          url: "/"
-          // 后端处理上传逻辑返回json数据,包括uploaded(选项true/false)和url两个字段
-        }
-      })
-        .then(editor => {
-          const toolbarContainer = document.querySelector("#toolbar-container"+that.id);
-          toolbarContainer.appendChild(editor.ui.view.toolbar.element);
-          // 加载了适配器
-          editor.plugins.get("FileRepository").createUploadAdapter = loader => {
-            // debugger
-            return new UploadAdapter(loader);
-          };
-          editor.model.document.on("change:data", function() {
-            console.log(editor.getData());
-            // $("#" + editorId).val(editor.getData());
-          });
-          this.editor = editor; // 将编辑器保存起来，用来随时获取编辑器中的内容等，执行一些操作
-        })
-        .catch(error => {
-          console.error(error);
-        });
-    }
+  computed: {
+    isExternal() {
+      return isExternal(this.iconClass)
+    },
+    iconName() {
+      return `#icon-${this.iconClass}`
+    },
+   
   }
-};
+}
 </script>
 
-<style >
-.ck-editor__editable_inline {
-  min-height: 200px;
-}
-.ck-content .table {
-    margin: 1em auto;
-    display: table;
-    float: left;
-}
-</style>
+<style scoped>
 
+</style>
