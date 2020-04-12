@@ -97,12 +97,14 @@ export default {
 };
 </script>
 
-<style scoped>
+<style >
 .ck-editor__editable_inline {
   min-height: 200px;
 }
-.editorClass {
-  border: 1px solid #ccc;
+.ck-content .table {
+    margin: 1em auto;
+    display: table;
+    float: left;
 }
 </style>
 

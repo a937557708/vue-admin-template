@@ -20,6 +20,12 @@ export const constantRoutes = [
     meta: { title: 'Menu1-2-1' }
   },
   {
+    path: '/vue2Editor',
+    component: () => import('@/views/vue2Editor.vue'),
+    name: 'Menu1-2-1',
+    meta: { title: 'Menu1-2-1' }
+  },
+  {
     path: '/codemirror',
     component: () => import('@/views/codemirror.vue'),
     name: 'Menu1-2-1',
