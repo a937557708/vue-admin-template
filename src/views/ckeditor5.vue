@@ -2,10 +2,10 @@
   <div class="hello">
     <div class="goods-editor">
       <!-- 工具栏容器 -->
-      <div id="toolbar-container"></div>
+      <div :id="'toolbar-container'+id"></div>
 
       <!-- 编辑器容器 -->
-      <div id="editor" class="editorClass" :style="styleObj">
+      <div :id="'editor'+id" class="editorClass" :style="styleObj">
         <!-- <p>This is the initial editor content.</p> -->
       </div>
     </div>
@@ -31,6 +31,10 @@ export default {
       type: [String, Number],
       default: 400
     },
+    id:{
+      type: [String, Number],
+      default:new Date().getTime()
+    }
 
   },
   created() {
@@ -64,7 +68,7 @@ export default {
         abort() {}
       }
       //初始化编辑器
-      CKEditor.create(document.querySelector("#editor"), {
+      CKEditor.create(document.querySelector("#editor"+that.id), {
         removePlugins: ["MediaEmbed"], //除去视频按钮
         language: "zh-cn", // 中文
         ckfinder: {
@@ -74,7 +78,7 @@ export default {
         }
       })
         .then(editor => {
-          const toolbarContainer = document.querySelector("#toolbar-container");
+          const toolbarContainer = document.querySelector("#toolbar-container"+that.id);
           toolbarContainer.appendChild(editor.ui.view.toolbar.element);
           // 加载了适配器
           editor.plugins.get("FileRepository").createUploadAdapter = loader => {
@@ -85,8 +89,6 @@ export default {
             console.log(editor.getData());
             // $("#" + editorId).val(editor.getData());
           });
-          // debugger
-
           this.editor = editor; // 将编辑器保存起来，用来随时获取编辑器中的内容等，执行一些操作
         })
         .catch(error => {
