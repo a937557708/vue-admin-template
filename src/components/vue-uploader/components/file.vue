@@ -169,7 +169,7 @@
     },
     methods: {
       _actionCheck () {
-        debugger
+        // debugger
         this.paused = this.file.paused
         this.error = this.file.error
         this.isUploading = this.file.isUploading()

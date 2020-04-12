@@ -41,6 +41,12 @@ export const constantRoutes = [
     name: 'Menu1-2-1',
     meta: { title: 'Menu1-2-1' }
   },
+  ,{
+    path: '/treeselect',
+    component: () => import('@/views/vue-treeselect.vue'),
+    name: 'Menu1-2-1',
+    meta: { title: 'Menu1-2-1' }
+  },
 ]
 
 const createRouter = () => new Router({
