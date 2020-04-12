@@ -24,6 +24,7 @@
     "@ckeditor/ckeditor5-paragraph": "^17.0.0",
     "@ckeditor/ckeditor5-theme-lark": "^17.0.0",
     "@ckeditor/ckeditor5-vue": "^1.0.1",
+    "@riophae/vue-treeselect": "^0.4.0",
     "@umijs/hooks": "^1.6.0",
     "axios": "0.18.1",
     "codemirror": "^5.52.0",
@@ -33,11 +34,13 @@
     "normalize.css": "7.0.0",
     "nprogress": "0.2.0",
     "path-to-regexp": "2.4.0",
-    "vue": "2.6.10",
-    "vue-router": "3.0.6",
-    "vuex": "3.1.0",
     "qs": "^6.5.2",
-    "simple-uploader.js": "^0.2.2"
+    "simple-uploader.js": "^0.2.2",
+    "vue": "2.6.10",
+    "vue-localstorage": "^0.6.2",
+    "vue-router": "3.0.6",
+    "vue2-editor": "^2.10.2",
+    "vuex": "3.1.0"
   },
   "devDependencies": {
     "@babel/core": "7.0.0",

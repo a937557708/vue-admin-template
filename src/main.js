@@ -15,6 +15,9 @@ import CKEditor from '@ckeditor/ckeditor5-vue';
 import uploader from './components/vue-uploader/index'
 import axios  from 'axios'
 import './components/index'
+
+// require('./components/dialog/index')
+
 Vue.use(uploader);
 
 Vue.use( CKEditor );

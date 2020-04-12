@@ -15,6 +15,7 @@
 <script>
 // doc: https://panjiachen.github.io/vue-element-admin-site/feature/component/svg-icon.html#usage
 import { isExternal } from '@/utils/validate'
+import Vue from 'vue'
 
 export default {
   name: 'SvgIcon',
@@ -36,7 +37,12 @@ export default {
       return `#icon-${this.iconClass}`
     },
    
-  }
+  },
+  mounted(){
+    Vue.localStorage.set('someNumber', 123)
+    console.log(Vue.localStorage)
+    console.log(Vue.localStorage.get('someNumber'))
+  },
 }
 </script>
 
