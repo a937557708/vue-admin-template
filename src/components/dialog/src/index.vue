@@ -37,7 +37,7 @@
         <div v-else>
           <div v-if="dangerouslyUseHTMLString" v-html="content"></div>
           <div v-else v-text="content"></div>
-          <slot></slot>
+          <slot :option="componentsObj"></slot>
         </div>
       </div>
       <div
@@ -141,7 +141,8 @@ export default {
     contentBgColor: String,
     cancel:Function,
     ok:Function,
-    height:Number
+    height:Number,
+    componentsObj:Object
   },
   mounted() {},
   methods: {

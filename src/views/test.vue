@@ -2,7 +2,7 @@
   <el-row>
     <el-col :span="24">
       水水水水
-      <highlight/>
+      <highlight />
       <div id="sadsa"></div>
     </el-col>
   </el-row>
@@ -29,7 +29,7 @@ export default {
       return `#icon-${this.iconClass}`;
     }
   },
-  components:{
+  components: {
     highlight
   },
   created() {},
@@ -71,12 +71,22 @@ export default {
     // new Profile().$mount("#sadsa");
     console.log("instance", this.$DialogBox);
     this.$DialogBox({
-      components:{
-        highlight
-      },
-     height:500,
-      ok(){
-       this.dialog=false
+      components: [
+        {
+          name: "highlight",
+          component: highlight,
+          params: ['option']
+        }
+      ],
+      data:{
+        componentsObj:{
+          firstName:'da'
+        },
+        firstName:'da',
+        height: 400,
+        ok() {
+          this.dialog = false;
+        }
       }
       // draggable:true,
     });

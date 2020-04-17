@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-button @click="html=''">默认按钮{{firstName}}</el-button>
+    <el-button @click="html=''">默认按钮{{option.firstName}}</el-button>
     <div v-html="html" v-highlight></div>
     <slot></slot>
   </div>
@@ -43,7 +43,12 @@ hljs.highlightBlock(block)
     }
   },
   props: {
-    firstName:String
+    option:{
+      type:Object,
+      default:()=>{
+        return {}
+      }
+    }
   },
   computed: {},
   components: {

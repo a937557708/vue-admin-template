@@ -12,22 +12,31 @@ const initInstance = (option) => {
   let param='';
   let components= { dialogVue };
   let componentsStr='';
-  for(let key in option){
-    if(key=='components'){
-      for(let ckey in option[key]){
-        componentsStr+=`<${ckey}></${ckey}>`;
-        components[ckey]=option[key][ckey];
-      }
-    }else{
-      param+=`:${key}="option.${key}"`;
-    }
+  let comBoj=(option.components||{});
+
+  comBoj.forEach(elementP => {
+    let comStr='';
+    let name=elementP.name;
+    let params=elementP.params;
+    
+    params.forEach(element => {
+      comStr+=`:${element}="scope.${element}"`;
+    });
+    componentsStr+=`   <template slot-scope="scope"><${name} ${comStr}></${name}>  </template>`;
+    components[name]=elementP.component
+
+  })
+
+  let data=(option.data|| {});
+  for(let key in data){
+    param+=`:${key}="option.${key}"`;
   }
   let dialogNew= Vue.extend({
     template: `<dialogVue ${param}>${componentsStr}</dialogVue>`,
     components:components,
     data: function () {
       return  {
-        option
+        option:data
       };
     }
   });
@@ -68,7 +77,6 @@ DialogBox.error = (options) => {
 };
 DialogBox.close = () => {
   instance
- debugger
 };
 
 export default DialogBox;
