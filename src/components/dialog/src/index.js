@@ -12,7 +12,7 @@ const initInstance = (option) => {
   let param='';
   let components= { dialogVue };
   let componentsStr='';
-  let comBoj=(option.components||{});
+  let comBoj=(option.components||[]);
 
   comBoj.forEach(elementP => {
     let comStr='';
