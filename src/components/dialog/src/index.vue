@@ -60,8 +60,6 @@
 
 import Vue from 'vue'
 export default {
-  name: "Vue2Editor",
-  props: ["content", "disabled"],
   data() {
     return {
       dialog:true,
