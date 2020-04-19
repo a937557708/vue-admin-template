@@ -57,7 +57,8 @@
  </div>
 </template>
 <script>
-import { VueEditor } from "vue2-editor";
+
+import Vue from 'vue'
 export default {
   name: "Vue2Editor",
   props: ["content", "disabled"],
