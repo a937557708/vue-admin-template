@@ -24,9 +24,9 @@ module.exports = {
    * In most cases please use '/' !!!
    * Detail: https://cli.vuejs.org/config/#publicpath
    */
-  // publicPath: '/',
+  publicPath: '/',
   outputDir: 'dist',
-  assetsDir: '/',
+  assetsDir: './',
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
   devServer: {
@@ -70,11 +70,11 @@ module.exports = {
       .end()
     config.module
       .rule('icons')
-      .test(/\.svg$/)
+      .test(/\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/)
       .include.add(resolve('src/icons'))
       .end()
       .use('svg-sprite-loader')
-      .loader('svg-sprite-loader')
+      .loader('url-loader')
       .options({
         symbolId: 'icon-[name]'
       })

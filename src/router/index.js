@@ -58,6 +58,12 @@ export const constantRoutes = [
     component: () => import('@/views/dialog.vue'),
     name: 'Menu1-2-1',
     meta: { title: 'Menu1-2-1' }
+  }
+  ,{
+    path: '/tab',
+    component: () => import('@/views/tabTest.vue'),
+    name: 'Menu1-2-1',
+    meta: { title: 'Menu1-2-1' }
   },
 ]
 
