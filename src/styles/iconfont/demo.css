@@ -39,6 +39,7 @@
   margin-bottom: -1px;
   color: #666;
   display: inline-block;
+  
 }
 
 
@@ -117,9 +118,9 @@
   transition: font-size 0.25s linear, width 0.25s linear;
 }
 
-.icon_lists .icon:hover {
+/* .icon_lists .icon:hover {
   font-size: 100px;
-}
+} */
 
 .icon_lists .svg-icon {
   /* 通过设置 font-size 来改变图标大小 */
