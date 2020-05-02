@@ -69,6 +69,11 @@ export const constantRoutes = [
     component: () => import('@/views/fonts.vue'),
     name: 'Menu1-2-1',
     meta: { title: 'Menu1-2-1' }
+  },{
+    path: '/step',
+    component: () => import('@/views/step.vue'),
+    name: 'Menu1-2-1',
+    meta: { title: 'Menu1-2-1' }
   },
 ]
 
