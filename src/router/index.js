@@ -75,6 +75,12 @@ export const constantRoutes = [
     name: 'Menu1-2-1',
     meta: { title: 'Menu1-2-1' }
   },
+  {
+    path: '/ckeditor4',
+    component: () => import('@/views/ckeditor4.vue'),
+    name: 'Menu1-2-1',
+    meta: { title: 'Menu1-2-1' }
+  },
 ]
 
 

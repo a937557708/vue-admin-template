@@ -22,6 +22,7 @@ import './components/index'
 Vue.use(uploader);
 
 Vue.use( CKEditor );
+
 // import '@/icons' // icon
 // import '@/permission' // permission control
 
