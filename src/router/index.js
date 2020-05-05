@@ -81,6 +81,12 @@ export const constantRoutes = [
     name: 'Menu1-2-1',
     meta: { title: 'Menu1-2-1' }
   },
+  {
+    path: '/neditor',
+    component: () => import('@/views/neditor.vue'),
+    name: 'Menu1-2-1',
+    meta: { title: 'Menu1-2-1' }
+  },
 ]
 
 
