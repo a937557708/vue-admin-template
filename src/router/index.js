@@ -87,6 +87,12 @@ export const constantRoutes = [
     name: 'Menu1-2-1',
     meta: { title: 'Menu1-2-1' }
   },
+  {
+    path: '/bettersearch',
+    component: () => import('@/views/bettersearch.vue'),
+    name: 'Menu1-2-1',
+    meta: { title: 'Menu1-2-1' }
+  },
 ]
 
 

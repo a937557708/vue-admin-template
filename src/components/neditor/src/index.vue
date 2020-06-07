@@ -55,7 +55,6 @@ export default {
    
      let that=this;
      let id='neditor_'+that.id;
-    debugger
     this.$nextTick(()=>{
 
       this.editor=UE.getEditor(id, Object.assign( that.config,{
