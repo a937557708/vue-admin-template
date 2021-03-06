@@ -17,7 +17,8 @@ export default {
   name: "jodit",
   data() {
     return {
-    editor:null
+    editor:null,
+    editorValue:'',
     };
   },
   props: {  
@@ -31,9 +32,8 @@ export default {
   },
   mounted() {
     console.log(Jodit)
-    this.editor = new Jodit('#editor', {
-         "autofocus":false,
-
+    let editor=this.editor = new Jodit('#editor', {
+          autofocus:true,
           "uploader": {  
               insertImageAsBase64URI:true, 
           },
@@ -45,15 +45,24 @@ export default {
           height: 'auto',
           minHeight: 500, 
       });
-      setTimeout(()=>{
+      editor.setEditorValue("sdsa")
+      editor.e.on("focus",(editor)=>{
          $('#cke_editor1').remove()
-      },300)
+      })
+      editor.e.on("mousedown",(e)=>{
+        // debugger
+      })
+      editor.e.on("blur",(e)=>{ 
+       this.editorValue= editor.getEditorValue(); 
+      })
+         
+      setTimeout(()=>{
+           $('#cke_editor1').remove()
+      },100)
       this.$nextTick(()=>{
        
       })
-      // editor.setEditorValue("asdasda")
-      // let ette=editor.getEditorValue();
-      // debugger
+   
   },
   methods: {
     
