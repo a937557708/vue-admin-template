@@ -60,7 +60,6 @@ export default {
   },
   methods: {
     onContextmenu(event) {
-        debugger
         let that=this;
       this.$contextmenu({
         items: [

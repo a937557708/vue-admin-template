@@ -17,6 +17,7 @@
         <a href="" class="bullshit__return-home">Back to home</a>
       </div>
     </div>
+    
   </div>
 </template>
 

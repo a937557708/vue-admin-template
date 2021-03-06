@@ -93,6 +93,12 @@ export const constantRoutes = [
     name: 'Menu1-2-1',
     meta: { title: 'Menu1-2-1' }
   },
+  {
+    path: '/jodit',
+    component: () => import('@/components/jodit/src/index.vue'),
+    name: 'Menu1-2-1',
+    meta: { title: 'Menu1-2-1' }
+  },
 ]
 
 

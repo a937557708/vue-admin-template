@@ -91,7 +91,7 @@ export default {
       //初始化编辑器
       let o=this.instance  =CKEDITOR.replace("editor"+that.id,config );
     
-
+      debugger
       o.on("instanceReady", () =>{
             const t = this.value;
             o.fire("lockSnapshot"),

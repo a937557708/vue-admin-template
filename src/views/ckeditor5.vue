@@ -1,14 +1,16 @@
 <template>
- <el-row>
-     <el-col :span="24"> 
+ <el-row> 
+    <!--  <el-col   :span="24"> 
         <ckeditorTest5 id="asdsa" v-model="strHtml"></ckeditorTest5>
      </el-col>
       <el-col :span="24"> 
         <ckeditorTest5 id="asdsa11" v-model="strHtml1"></ckeditorTest5>
-     </el-col>
-      <el-col :span="24"> 
-        <ckeditorTest5 id="asdsawqeq" v-model="strHtml2"></ckeditorTest5>
-     </el-col>
+     </el-col> -->
+      <el-col  :span="24"> 
+        <ckeditorTest5  id="asdsawqeq" v-model="strHtml2"></ckeditorTest5>
+     </el-col>  
+     
+    
 </el-row>
 </template>
 
@@ -39,6 +41,7 @@ export default {
    
   },
   mounted(){
+
     Vue.localStorage.set('someNumber', 123)
     console.log(Vue.localStorage)
     console.log(Vue.localStorage.get('someNumber'))
